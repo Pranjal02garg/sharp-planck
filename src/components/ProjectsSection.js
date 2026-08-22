@@ -37,7 +37,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
 
   // Cards further down the stack stay full-size; earlier cards scale DOWN
   // as later cards stack on top of them.
-  const targetScale = 1 - (total - 1 - index) * 0.03;
+  const targetScale = 1 - (total - 1 - index) * 0.04;
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
 
   return (
@@ -54,7 +54,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
         <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 sm:gap-6">
           <div className="flex flex-row items-start gap-3 sm:gap-6 md:gap-10 min-w-0 w-full">
             <div
-              className="shrink-0 font-black text-[#D7E2EA] leading-none"
+              className="shrink-0 font-black text-[#D7E2EA] leading-none font-kanit"
               style={{ fontSize: 'clamp(2.5rem, 10vw, 140px)' }}
             >
               {project.number}
@@ -68,7 +68,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
                 {project.category}
               </span>
               <h3
-                className="font-medium uppercase text-[#D7E2EA] leading-tight"
+                className="font-medium uppercase text-[#D7E2EA] leading-tight font-kanit"
                 style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2.1rem)' }}
               >
                 {project.name}
@@ -92,7 +92,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
               <img
                 src={project.col1Image1}
                 alt={`${project.name} preview 1`}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 draggable={false}
               />
@@ -104,7 +104,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
               <img
                 src={project.col1Image2}
                 alt={`${project.name} preview 2`}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 draggable={false}
               />
@@ -116,7 +116,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
             <img
               src={project.col2Image}
               alt={`${project.name} preview 3`}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
               loading="lazy"
               draggable={false}
             />
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
     >
       <FadeIn y={40}>
         <h2
-          className="hero-heading text-center font-black uppercase tracking-tight leading-none mb-16 sm:mb-20 md:mb-28"
+          className="hero-heading text-center font-black uppercase tracking-tight leading-none mb-16 sm:mb-20 md:mb-28 font-kanit"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
           Project

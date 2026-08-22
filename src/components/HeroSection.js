@@ -181,22 +181,22 @@ const HeroSection = () => {
         <div className="flex flex-1 items-center" onClick={togglePlay}>
           <div className="w-full max-w-7xl px-6 md:px-10 cursor-pointer">
             <FadeIn delay={0.3} y={20}>
-              <p className="mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] text-white/60">
+              <p className="mb-3 sm:mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] text-white/60">
                 Portfolio · 2026
               </p>
             </FadeIn>
 
             <FadeIn delay={0.5} y={40}>
               <h1
-                className="font-black uppercase leading-[0.88] tracking-tight text-white font-kanit"
-                style={{ fontSize: 'clamp(3rem, 12vw, 10.5rem)' }}
+                className="font-black uppercase leading-[0.88] tracking-tight text-white font-kanit max-w-xl md:max-w-2xl"
+                style={{ fontSize: 'clamp(2.75rem, 8.2vw, 7.5rem)' }}
               >
                 Pranjal<br />Garg
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.85} y={20}>
-              <p className="mt-5 md:mt-7 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.3em] text-white/75">
+              <p className="mt-4 sm:mt-5 md:mt-7 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.3em] text-white/75 max-w-lg">
                 Robotics & AI · Deep Learning · Cloud & Systems
               </p>
             </FadeIn>
