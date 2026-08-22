@@ -26,21 +26,24 @@ const PROJECTS = [
   },
 ];
 
-const ProjectCard = ({ project, index, total }) => {
+const ProjectCard = ({ project, index, total, containerRef }) => {
   const cardRef = useRef(null);
 
+  // Scroll progress for THIS card relative to the whole projects scroll range
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ['start end', 'start start'],
   });
 
+  // Cards further down the stack stay full-size; earlier cards scale DOWN
+  // as later cards stack on top of them (matching exact reference formula)
   const targetScale = 1 - (total - 1 - index) * 0.03;
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
 
   return (
     <div
       ref={cardRef}
-      className="sticky top-24 md:top-32 h-[85vh] w-full mb-12 sm:mb-16"
+      className="sticky top-24 md:top-32 h-[85vh] w-full"
       style={{ top: `${96 + index * 28}px` }}
     >
       <motion.article
@@ -52,21 +55,21 @@ const ProjectCard = ({ project, index, total }) => {
           <div className="flex flex-row items-start gap-3 sm:gap-6 md:gap-10 min-w-0 w-full">
             <div
               className="shrink-0 font-black text-[#D7E2EA] leading-none font-kanit"
-              style={{ fontSize: 'clamp(2.5rem, 10vw, 120px)' }}
+              style={{ fontSize: 'clamp(2.5rem, 10vw, 140px)' }}
             >
               {project.number}
             </div>
 
-            <div className="flex flex-col gap-1 sm:gap-2 pt-1 sm:pt-3 md:pt-4 min-w-0 flex-1">
+            <div className="flex flex-col gap-1 sm:gap-3 pt-1 sm:pt-3 md:pt-4 min-w-0 flex-1">
               <span
                 className="font-light uppercase tracking-widest text-[#D7E2EA]/60"
-                style={{ fontSize: 'clamp(0.65rem, 1.2vw, 0.95rem)' }}
+                style={{ fontSize: 'clamp(0.65rem, 1.2vw, 1rem)' }}
               >
                 {project.category}
               </span>
               <h3
-                className="font-medium uppercase text-[#D7E2EA] leading-tight"
-                style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2rem)' }}
+                className="font-medium uppercase text-[#D7E2EA] leading-tight font-kanit"
+                style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2.1rem)' }}
               >
                 {project.name}
               </h3>
@@ -78,12 +81,12 @@ const ProjectCard = ({ project, index, total }) => {
           </div>
         </div>
 
-        {/* Bottom row: two-column image preview grid */}
+        {/* Bottom row: two-column image grid */}
         <div className="grid grid-cols-[40%_60%] gap-3 sm:gap-4 md:gap-5 flex-1 min-h-0">
-          {/* Left column - 2 stacked preview images */}
+          {/* Left column - 2 stacked images */}
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 min-h-0">
             <div
-              className="overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[44px] border border-[#D7E2EA]/15 bg-[#141418]"
+              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(130px, 16vw, 230px)' }}
             >
               <img
@@ -95,7 +98,7 @@ const ProjectCard = ({ project, index, total }) => {
               />
             </div>
             <div
-              className="overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[44px] border border-[#D7E2EA]/15 bg-[#141418]"
+              className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               style={{ height: 'clamp(160px, 22vw, 340px)' }}
             >
               <img
@@ -108,8 +111,8 @@ const ProjectCard = ({ project, index, total }) => {
             </div>
           </div>
 
-          {/* Right column - 1 tall main preview image */}
-          <div className="overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[44px] border border-[#D7E2EA]/15 bg-[#141418] min-h-0">
+          {/* Right column - 1 tall main image */}
+          <div className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px] min-h-0">
             <img
               src={project.col2Image}
               alt={`${project.name} preview 3`}
@@ -137,7 +140,7 @@ const ProjectsSection = () => {
           className="hero-heading text-center font-black uppercase tracking-tight leading-none mb-16 sm:mb-20 md:mb-28 font-kanit"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Projects
+          Project
         </h2>
       </FadeIn>
 
@@ -148,6 +151,7 @@ const ProjectsSection = () => {
             project={project}
             index={i}
             total={PROJECTS.length}
+            containerRef={containerRef}
           />
         ))}
       </div>
