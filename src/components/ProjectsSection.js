@@ -8,46 +8,28 @@ import LiveProjectButton from './LiveProjectButton';
 const PROJECTS = [
   {
     number: '01',
-    category: 'Personal',
-    name: 'Forge',
-    liveUrl: 'https://forge-pink-seven.vercel.app/',
-    col1Image1: '/Forge.png',
-    col1Image2: '/Forge1.png',
-    col2Image: '/Forge2.png',
+    category: '3D & Web Engineering · Interactive',
+    name: '3D Regex Visualizer',
+    liveUrl: 'https://3dregex.vercel.app',
+    col1Image1: '/3dregex-1.png',
+    col1Image2: '/3dregex-2.png',
+    col2Image: '/3dregex-3.png',
   },
   {
     number: '02',
-    category: 'Personal',
-    name: 'LawLab',
-    liveUrl: 'https://lawlab-self.vercel.app',
-    col1Image1: '/lawlab.png',
-    col1Image2: '/lawlab1.png',
-    col2Image: '/lawlab2.png',
-  },
-  {
-    number: '03',
-    category: 'Personal · GenAI',
-    name: 'ResumeIQ',
-    liveUrl: 'https://resumeiq-harsh.vercel.app/',
-    col1Image1: '/resumeiq-hero.png',
-    col1Image2: '/resumeiq-feedback.png',
-    col2Image: '/resumeiq-score.png',
-  },
-  {
-    number: '04',
-    category: 'Personal · Design',
-    name: 'Notch',
-    liveUrl: 'https://notch-zeta.vercel.app/',
-    col1Image1: '/notch-hero.png',
-    col1Image2: '/notch-pricing.png',
-    col2Image: '/notch-mockup.png',
+    category: 'Campus-Funded Production System · Cloud Architecture',
+    name: 'Multi-Gate Campus VMS',
+    liveUrl: 'https://vsm-deploy.versel.app',
+    col1Image1: '/vms-1.png',
+    col1Image2: '/vms-2.png',
+    col2Image: '/vms-3.png',
   },
 ];
 
 const ProjectCard = ({ project, index, total, containerRef }) => {
   const cardRef = useRef(null);
 
-  // Scroll progress for THIS card relative to the whole projects scroll range
+  // Scroll progress for THIS card relative to the whole projects scroll range.
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ['start end', 'start start'],
