@@ -5,7 +5,7 @@ import ContactButton from './ContactButton';
 import AnimatedText from './AnimatedText';
 
 const ABOUT_TEXT =
-  "I'm a Computer Science graduate from NSUT, currently a Content R&D Trainee at PhysicsWallah, where I help ship live, customer-facing learning products. I focus on UI/UX, front-end development, and GenAI integration — turning rough ideas into clean, engaging digital experiences. Let's build something incredible together!";
+  "Robotics & Artificial Intelligence undergraduate at Thapar Institute of Engineering and Technology. I engineer deep learning architectures, computer vision pipelines, generative AI models, and scalable AWS cloud backends.";
 
 const AboutSection = () => {
   return (
@@ -92,8 +92,8 @@ const AboutSection = () => {
         <div className="flex flex-col items-center gap-12 sm:gap-16 md:gap-20">
           <AnimatedText
             text={ABOUT_TEXT}
-            className="font-medium leading-relaxed text-[#D7E2EA] max-w-[560px]"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
+            className="font-medium leading-relaxed text-[#D7E2EA] max-w-[620px]"
+            style={{ fontSize: 'clamp(1.05rem, 2.2vw, 1.4rem)' }}
           />
 
           {/* Skills Grid */}
@@ -102,19 +102,15 @@ const AboutSection = () => {
               {[
                 {
                   label: 'Languages',
-                  items: ['Python', 'JavaScript', 'HTML', 'CSS', 'SQL'],
+                  items: ['Python', 'C / C++', 'SQL'],
                 },
                 {
-                  label: 'Frameworks & Libraries',
-                  items: ['React', 'Tailwind', 'Pandas', 'NumPy', 'Scikit-learn', 'NLTK'],
+                  label: 'Libraries & Frameworks',
+                  items: ['PyTorch', 'OpenCV', 'scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'Streamlit'],
                 },
                 {
-                  label: 'Tools & Platforms',
-                  items: ['Figma', 'Vercel', 'Git', 'GitHub', 'Power BI', 'Canva', 'Excel'],
-                },
-                {
-                  label: 'AI & GenAI',
-                  items: ['Gemini', 'Claude', 'OpenAI', 'Prompt engineering'],
+                  label: 'Cloud & Developer Tools',
+                  items: ['AWS (ECR, ECS, App Runner)', 'Docker', 'PostgreSQL', 'Upstash Redis', 'Git'],
                 },
               ].map((group) => (
                 <div

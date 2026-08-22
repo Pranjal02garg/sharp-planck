@@ -7,26 +7,26 @@ const CONTACT_METHODS = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'pranjalgarg.dev@gmail.com',
-    href: 'mailto:pranjalgarg.dev@gmail.com',
+    value: 'pranjalgarg02gp@gmail.com',
+    href: 'mailto:pranjalgarg02gp@gmail.com',
   },
   {
     icon: MessageCircle,
-    label: 'WhatsApp',
-    value: '+91 99999 99999',
-    href: 'https://wa.me/919999999999',
+    label: 'WhatsApp / Phone',
+    value: '+91 81469 29728',
+    href: 'https://wa.me/918146929728',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'in/pranjal-garg',
-    href: 'https://www.linkedin.com/in/pranjal-garg-24a9191bb/',
+    href: 'https://www.linkedin.com/in/pranjal-garg-1ba961334/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: '@pranjalgarg',
-    href: 'https://github.com/pranjalgarg',
+    value: '@Pranjal02garg',
+    href: 'https://github.com/Pranjal02garg',
   },
 ];
 

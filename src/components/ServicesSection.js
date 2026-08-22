@@ -5,33 +5,33 @@ import FadeIn from './FadeIn';
 const SERVICES = [
   {
     number: '01',
-    title: 'UI/UX Design',
+    title: 'Deep Learning & Computer Vision',
     description:
-      'Designing clean, intuitive interfaces that prioritise user flow, hierarchy, and visual clarity — turning ideas into experiences people actually enjoy using.',
+      'Developing neural architectures with PyTorch and OpenCV — including custom GAN augmentation, ArcFace facial embeddings, DBSCAN clustering, and hybrid quantum-classical classifiers (QCNN).',
   },
   {
     number: '02',
-    title: 'Front-end Development',
+    title: 'GenAI & Digital Watermarking',
     description:
-      'Building responsive, performant web apps with React, TypeScript, and Tailwind — pixel-perfect on every screen, deployed seamlessly on Vercel.',
+      'Architecting unified Generative-AI frameworks and high-accuracy invisible watermarking pipelines (PSNR 54.95 dB, SSIM 0.997) for AI content certification and digital media protection.',
   },
   {
     number: '03',
-    title: 'GenAI Integration',
+    title: 'Cloud Systems & DevOps',
     description:
-      'Wiring large language models into real products via Gemini, Claude, and OpenAI APIs — from resume reviewers to AI tutors and beyond.',
+      'Building production-ready cloud architectures on AWS (ECS, ECR, App Runner) containerized with multi-stage Docker, PostgreSQL, Upstash Redis, and automated CI/CD pipelines.',
   },
   {
     number: '04',
-    title: 'Prompt Engineering & LLM Automation',
+    title: 'Robotics & AI Systems',
     description:
-      'Crafting reliable prompts and automation flows that turn LLMs into production-grade tools for content, analysis, and decision support.',
+      'Studying Robotics and Artificial Intelligence at TIET with a focus on autonomous algorithms, intelligent systems, hardware-software integration, and techno-cultural engineering leadership.',
   },
   {
     number: '05',
-    title: 'Data Analysis & Visualization',
+    title: 'Full-Stack & Intelligent Apps',
     description:
-      'Exploring datasets with Python (Pandas, NumPy, Seaborn) and Power BI — turning raw numbers into clear insights and dashboards stakeholders can act on.',
+      'Engineering enterprise web systems with dynamic form engines, 3-tier Role-Based Access Control (RBAC), OTP/QR verification, and interactive data dashboards using Streamlit and Python.',
   },
 ];
 
