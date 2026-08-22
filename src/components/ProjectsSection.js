@@ -8,21 +8,39 @@ import LiveProjectButton from './LiveProjectButton';
 const PROJECTS = [
   {
     number: '01',
-    category: '3D & Web Engineering · Interactive',
-    name: '3D Regex Visualizer',
-    liveUrl: 'https://3dregex.vercel.app',
-    col1Image1: '/3dregex-1.png',
-    col1Image2: '/3dregex-2.png',
-    col2Image: '/3dregex-3.png',
+    category: 'Personal',
+    name: 'Forge',
+    liveUrl: 'https://forge-pink-seven.vercel.app/',
+    col1Image1: '/Forge.png',
+    col1Image2: '/Forge1.png',
+    col2Image: '/Forge2.png',
   },
   {
     number: '02',
-    category: 'Campus-Funded Production System · Cloud Architecture',
-    name: 'Multi-Gate Campus VMS',
-    liveUrl: 'https://vsm-deploy.versel.app',
-    col1Image1: '/vms-1.png',
-    col1Image2: '/vms-2.png',
-    col2Image: '/vms-3.png',
+    category: 'Personal',
+    name: 'LawLab',
+    liveUrl: 'https://lawlab-self.vercel.app',
+    col1Image1: '/lawlab.png',
+    col1Image2: '/lawlab1.png',
+    col2Image: '/lawlab2.png',
+  },
+  {
+    number: '03',
+    category: 'Personal · GenAI',
+    name: 'ResumeIQ',
+    liveUrl: 'https://resumeiq-harsh.vercel.app/',
+    col1Image1: '/resumeiq-hero.png',
+    col1Image2: '/resumeiq-feedback.png',
+    col2Image: '/resumeiq-score.png',
+  },
+  {
+    number: '04',
+    category: 'Personal · Design',
+    name: 'Notch',
+    liveUrl: 'https://notch-zeta.vercel.app/',
+    col1Image1: '/notch-hero.png',
+    col1Image2: '/notch-pricing.png',
+    col2Image: '/notch-mockup.png',
   },
 ];
 
@@ -36,7 +54,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
   });
 
   // Cards further down the stack stay full-size; earlier cards scale DOWN
-  // as later cards stack on top of them (matching exact reference formula)
+  // as later cards stack on top of them.
   const targetScale = 1 - (total - 1 - index) * 0.03;
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
 
@@ -54,7 +72,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
         <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-4 sm:gap-6">
           <div className="flex flex-row items-start gap-3 sm:gap-6 md:gap-10 min-w-0 w-full">
             <div
-              className="shrink-0 font-black text-[#D7E2EA] leading-none font-kanit"
+              className="shrink-0 font-black text-[#D7E2EA] leading-none"
               style={{ fontSize: 'clamp(2.5rem, 10vw, 140px)' }}
             >
               {project.number}
@@ -68,7 +86,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
                 {project.category}
               </span>
               <h3
-                className="font-medium uppercase text-[#D7E2EA] leading-tight font-kanit"
+                className="font-medium uppercase text-[#D7E2EA] leading-tight"
                 style={{ fontSize: 'clamp(1.1rem, 2.2vw, 2.1rem)' }}
               >
                 {project.name}
@@ -83,7 +101,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
 
         {/* Bottom row: two-column image grid */}
         <div className="grid grid-cols-[40%_60%] gap-3 sm:gap-4 md:gap-5 flex-1 min-h-0">
-          {/* Left column - 2 stacked images */}
+          {/* Left column - 2 stacked */}
           <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 min-h-0">
             <div
               className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
@@ -92,7 +110,7 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
               <img
                 src={project.col1Image1}
                 alt={`${project.name} preview 1`}
-                className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                className="h-full w-full object-cover"
                 loading="lazy"
                 draggable={false}
               />
@@ -104,19 +122,19 @@ const ProjectCard = ({ project, index, total, containerRef }) => {
               <img
                 src={project.col1Image2}
                 alt={`${project.name} preview 2`}
-                className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                className="h-full w-full object-cover"
                 loading="lazy"
                 draggable={false}
               />
             </div>
           </div>
 
-          {/* Right column - 1 tall main image */}
+          {/* Right column - 1 tall */}
           <div className="overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px] min-h-0">
             <img
               src={project.col2Image}
               alt={`${project.name} preview 3`}
-              className="h-full w-full object-cover object-top hover:scale-105 transition-transform duration-500"
+              className="h-full w-full object-cover"
               loading="lazy"
               draggable={false}
             />
@@ -137,7 +155,7 @@ const ProjectsSection = () => {
     >
       <FadeIn y={40}>
         <h2
-          className="hero-heading text-center font-black uppercase tracking-tight leading-none mb-16 sm:mb-20 md:mb-28 font-kanit"
+          className="hero-heading text-center font-black uppercase tracking-tight leading-none mb-16 sm:mb-20 md:mb-28"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
           Project
